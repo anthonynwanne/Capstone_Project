@@ -7,5 +7,15 @@
     "method-override": "^3.0.0",
     "mongoose": "^8.8.2",
     "nodemon": "^3.1.7"
-  }
+  },
+  "name": "capstone_project",
+  "version": "1.0.0",
+  "description": "Full Stack Web Design Capstone Project: Software Engineering Project Overview: A full-stack web application for a task management system called TaskMaster. This project will integrate various concepts such as Node.js, Express.js, databases, APIs, and front-end development. Project Steps: 1. Project Planning: ○ Objective: Build a task management system that allows users to create, update, and delete tasks. Users can also organize tasks by priority and set deadlines. Your system should be scalable, secure, and optimized for performance. ○ Tech Stack: ■ Backend: Node.js, Express.js ■ Database: MongoDB or PostgreSQL ■ Frontend: HTML, CSS and JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src -d lib",
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC"
 }
