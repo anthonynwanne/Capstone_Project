@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 const collection = require('./config');
 //const cors = require('cors');
 const bodyParser = require("body-parser");
-const Task = require("./model/task");
+const Task = require("./task");
 const methodOverride = require("method-override");
 
 const app = express();
@@ -21,7 +21,7 @@ app.set('view engine', 'ejs');
 
 
 // Static file serving (for CSS, JS, images)
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "styel.css")));
 
 
 app.get('/', (req, res) => {
