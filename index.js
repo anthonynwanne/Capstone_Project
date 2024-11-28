@@ -24,11 +24,11 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, "styel.css")));
 
 
-app.get('/', (req, res) => {
+app.get('/login', (req, res) => {
     res.render('login');
 });
 
-app.get('/', (req, res) => {
+app.get('/home', (req, res) => {
     res.render('home');
 });
 
