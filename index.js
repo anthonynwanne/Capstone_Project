@@ -19,6 +19,7 @@ app.use(methodOverride("_method"));
 // Use EJS as the view engine
 app.set('view engine', 'ejs');
 
+app.set('views', path.join(__dirname, 'views'));
 
 // Static file serving (for CSS, JS, images)
 app.use(express.static(path.join(__dirname, "styel.css")));
