@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        form {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        .actions button {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Task Master</h1>
+
+        <!-- Create Task Form -->
+        <form action="/tasks" method="POST">
+            <h3>Create a New Task</h3>
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required><br><br>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description"></textarea><br><br>
+            
+            <label for="deadline">Start:</label>
+            <input type="date" id="start" name="start"><br><br>
+
+            <label for="deadline">Deadline:</label>
+            <input type="date" id="deadline" name="deadline"><br><br>
+
+            <label for="priority">Priority:</label>
+            <select id="priority" name="priority" required>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select><br><br>
+
+            <button type="submit">Create Task</button>
+        </form>
+
+        <!-- Search Filter  and Delete Form -->
+        <form action="/tasks" method="GET">
+            <h3>Search Filter and Delete Tasks</h3>
+            <label for="keyword">Search by Keyword:</label>
+            <input type="text" id="keyword" name="keyword"><br><br>
+
+            <label for="filter-priority">Filter by Priority:</label>
+            <select id="filter-priority" name="priority">
+                <option value="">All</option>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select><br><br>
+
+            <label for="dueDate">Filter by Due Date:</label>
+            <input type="date" id="dueDate" name="dueDate"><br><br>
+
+            <button type="submit">Apply Filters</button>
+             
+            <form action="/tasks/:id" method="DELETE">
+                <button type="delete">Delete Task</button>
+            </form>
+
+        </form>
+        <!-- update Form -->
+        <h3> Update Tasks</h3>
+        <form action="/tasks/:id/edit" method="GET">
+            <h3>Search and Update Tasks</h3>
+            <label for="keyword">Search by Id:</label>
+            <input type="text" id="keyword" name="keyword"><br><br>
+            <label for="filter-priority">Filter by Priority:</label>
+            <select id="filter-priority" name="priority">
+                <option value="">All</option>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select><br><br>
+            <label for="dueDate">Updatte Start Date:</label>
+            <input type="date" id="dueDate" name="dueDate"><br><br>
+
+            <label for="dueDate">Updatte Due Date:</label>
+            <input type="date" id="dueDate" name="dueDate"><br><br>
+
+            <button type="submit">Update Task</button>
+        </form>
+    </div>
+    <script src="/src/index.js"></script>
+
+<a href="http://localhost:5000/">
+        <div>
+            <button type="submit">Logout</button>
+        </div>
+
+</body>
+</html>
